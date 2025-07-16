@@ -1,0 +1,72 @@
+*{
+    box-sizing: border-box;
+}
+body {
+    background-color: darkslateblue;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h3 {
+    color:white;
+}
+
+.header{
+    overflow: hidden;
+    background-color: darkslateblue;
+    padding: 10px;
+
+}
+.header a{
+    float:left;
+    display:block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding: 15 px;
+    font-size: 1.1em;
+    text-transform: uppercase;
+}
+
+.header .search-bar {
+    float: right;
+}
+
+form{
+    background-color: darkblue;
+    width: 300 px;
+    height: 45px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+
+}
+
+input{
+    all:unset;
+    font: 15px Arial, Helvetica, sans-serif;
+    color: white;
+    height: 100%;
+    width: 100%;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.poster{
+    height: 300px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.col{
+    float: left;
+    width: 25%;
+    padding: 10px;
+}
+
+.card{   
+    border-radius: 20px;
+    padding: 15px;
+    text-align: center;
+    background-color: darkblue;
+    color: white;
+}
