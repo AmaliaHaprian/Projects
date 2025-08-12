@@ -12,9 +12,15 @@ if(storedLinks){
 
 saveButton.addEventListener("click", function(){
     links.push(inputElem.value);
-    inputElem.value="";
+    if(inputElem.value==""){
+        chrome.tabs.query({active: true, currentWindow: true}, tabs => {
+            let url=tabs[0].url;
+            links.push(url);
+        })
+    }
     localStorage.setItem("links", JSON.stringify(links));
     displayLinks();
+    inputElem.value="";
 })
 
 function displayLinks(){
