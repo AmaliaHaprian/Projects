@@ -4,7 +4,9 @@
     "name": "Link Saver",
     "action":{
         "default_popup": "index.html",
-        "default_icon": "icon.jpeg"
+        "default_icon": {
+            "16": "icon.png"
+        }
     },
 
     "permissions": [

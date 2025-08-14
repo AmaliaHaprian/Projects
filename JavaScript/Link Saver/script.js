@@ -2,6 +2,7 @@ let links=[];
 let inputElem=document.getElementById("inputElem");
 let saveButton=document.getElementById("saveButton");
 let linkList=document.getElementById("linkList");
+let clearButton=document.getElementById("clearButton");
 
 //localStorage.setItem("links", JSON.stringify(links));
 let storedLinks=JSON.parse(localStorage.getItem("links"));
@@ -11,16 +12,27 @@ if(storedLinks){
 }
 
 saveButton.addEventListener("click", function(){
-    links.push(inputElem.value);
-    if(inputElem.value==""){
+    if(inputElem.value===""){
         chrome.tabs.query({active: true, currentWindow: true}, tabs => {
             let url=tabs[0].url;
             links.push(url);
+            localStorage.setItem("links", JSON.stringify(links));
+            displayLinks();
         })
     }
-    localStorage.setItem("links", JSON.stringify(links));
+    else{
+        links.push(inputElem.value);
+        localStorage.setItem("links", JSON.stringify(links));
+        displayLinks();
+        inputElem.value="";
+    }
+   
+})
+
+clearButton.addEventListener("click", function(){
+    links=[];
     displayLinks();
-    inputElem.value="";
+    localStorage.clear();
 })
 
 function displayLinks(){
@@ -34,3 +46,4 @@ function displayLinks(){
     }
     linkList.innerHTML=text;
 }
+

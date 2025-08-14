@@ -14,9 +14,10 @@ body{
     padding: 10px;
     box-sizing: border-box;
     margin: 2px;
+    border-color: #27378A;
 }
 
-#saveButton {
+button {
     color: white;
     background-color: #27378A;
     font-weight: bold;
@@ -27,14 +28,17 @@ body{
 }
 
 ul {
-    list-style: none;
-    padding: 0;
+    margin-left: 5px;
+    padding: 5px;
 }
+
 li {
     margin-left: 5px;
     margin-bottom: 2px;
     font-size: 14px;
+    list-style-type: square;
 }
+
 a {
     text-decoration: none;
     color: #27378A;
